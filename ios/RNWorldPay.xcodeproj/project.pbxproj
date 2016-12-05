@@ -268,7 +268,7 @@
 				45F8841C1DF3FC0D00198D98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		45F8841D1DF3FC0D00198D98 /* Build configuration list for PBXNativeTarget "RNWorldPay" */ = {
 			isa = XCConfigurationList;
@@ -277,7 +277,7 @@
 				45F8841F1DF3FC0D00198D98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

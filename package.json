@@ -1,0 +1,25 @@
+{
+  "name": "react-native-worldpay",
+  "version": "1.0.2",
+  "description": "react-native-worldpay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvssoft/react-native-worldpay.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "worldpay",
+    "pay"
+  ],
+  "author": "wangzhengjie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvssoft/react-native-worldpay/issues"
+  },
+  "homepage": "https://github.com/jvssoft/react-native-worldpay#readme"
+}

@@ -1,18 +1,24 @@
 #import "RNWorldPay.h"
 #import "RCTBridge.h"
+#import "RCTConvert.h"
 #import <WorldpayCSE/WorldpayCSE.h>
 
 @implementation RNWorldPay
 
-RCT_EXPORT_MODULE(RNWorldPay);
+RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(encryptAction:(NSString *)cardHolderName
-                  cardNumber:(NSString *)cardNumber
-                  cvc:(NSString *) cvc
-                  expiryMonth:(NSString *) expiryMonth
-                  expiryYear:(NSString *) expiryYear)
+RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
+    //RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
+}
+
+RCT_EXPORT_METHOD(encryptAction:(NSString *)cardHolderName details:(NSDictionary *)details findEvents:(RCTResponseSenderBlock)callback)
+{
+        NSString *publicKey = [RCTConvert NSString:details[@"publicKey"]];
+        NSString *cardNumber = [RCTConvert NSString:details[@"cardNumber"]];
+        NSString *cvc = [RCTConvert NSString:details[@"cvc"]];
+        NSString *expiryMonth = [RCTConvert NSString:details[@"expiryMonth"]];
+        NSString *expiryYear = [RCTConvert NSString:details[@"expiryYear"]];
         NSError *error = nil;
         
         WorldpayCSE *wpCSE = [WorldpayCSE new];
@@ -37,9 +43,17 @@ RCT_EXPORT_METHOD(encryptAction:(NSString *)cardHolderName
         
         // encrypt card data and validate
         NSString *encryptedData = [wpCSE encrypt:cardData error:&error];
+    
+        if (error != nil) {
+           callback(@[[NSNull null], error]);
+        }
+        else{
+            callback(@[[NSNull null], encryptedData]);
+        }
         //return encryptedData;
         // [self fireEvent:@"Success" withData:encryptedData];
-    });
+        //NSArray *events = ...
+        callback(@[[NSNull null], encryptedData]);
 }
 
 

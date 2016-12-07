@@ -28,5 +28,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile "com.facebook.react:react-native:+"
+    compile 'com.worldpay:cse-android-sdk:1.0.2'
     testCompile 'junit:junit:4.12'
 }

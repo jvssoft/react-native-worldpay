@@ -1,6 +1,5 @@
 package tidebuy.app.com.react_native_worldpay;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,14 +10,14 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
-public class RNWorldPay implements ReactPackage {
+public class WorldPayPackage implements ReactPackage {
 
   @Override
   public List<NativeModule> createNativeModules(
                               ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new RNWorldPayModule(reactContext));
+    modules.add(new WorldPayModule(reactContext));
 
     return modules;
   }

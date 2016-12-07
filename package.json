@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "react-native-worldpay": "^1.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jvssoft/react-native-worldpay.git"

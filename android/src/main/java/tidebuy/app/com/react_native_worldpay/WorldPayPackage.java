@@ -11,26 +11,25 @@ import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
 public class WorldPayPackage implements ReactPackage {
-
+  private WorldPayModule worldPayModule;
   @Override
-  public List<NativeModule> createNativeModules(
-                              ReactApplicationContext reactContext) {
+  public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
-
-    modules.add(new WorldPayModule(reactContext));
+    worldPayModule= new WorldPayModule(reactContext);
+    modules.add(worldPayModule);
 
     return modules;
   }
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
-  	return Collections.emptyList();
+    return Collections.emptyList();
   }
 
   @Override
   public List<ViewManager> createViewManagers(
-                            ReactApplicationContext reactContext) {
-  	return Collections.emptyList();
+          ReactApplicationContext reactContext) {
+    return Collections.emptyList();
   }
 
 }

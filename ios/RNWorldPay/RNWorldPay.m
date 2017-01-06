@@ -71,9 +71,9 @@ RCT_EXPORT_METHOD(encryptAction:(NSDictionary *)details findEvents:(RCTResponseS
         if (error.code == WPErrorInvalidCardData) {
             NSArray *cardValidationErrors = error.userInfo[kWPErrorDetailsKey];
             
-            errorMessage = @"Invalid card data.\n";
+            //errorMessage = @"Invalid card data.\n";
             for (NSNumber *errorCode in cardValidationErrors) {
-                errorMessage = [errorMessage stringByAppendingFormat:@"%@ - %@\n", errorCode,errorCodeMsgMap[errorCode]];
+                errorMessage = [errorMessage stringByAppendingFormat:@"%@",errorCodeMsgMap[errorCode]];
             }
         }
         callback(@[errorMessage, @""]);

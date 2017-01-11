@@ -1,13 +1,13 @@
 {
   "name": "react-native-worldpay",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "react-native-worldpay",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react-native-worldpay": "^1.0.8"
+    "react-native-worldpay": "^1.0.9"
   },
   "repository": {
     "type": "git",
